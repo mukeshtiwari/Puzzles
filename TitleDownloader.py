@@ -10,24 +10,25 @@ class Downloader():
 	def __init__( self ):
 			self.q = Queue.Queue( 100 )
 
-	def downloadurl( self ) :
-		try:	
+	def downloadurl( self ) :	
 			while True :
-				url = self.q.get( )
-				data = urllib2.urlopen ( url ) 
-				parsed = BeautifulSoup ( data.read() , 'lxml' )
-				print parsed.find( 'title' )
-		except  :
-			print 'error occured in download url' 
+				try :
+					url = self.q.get( )
+					data = urllib2.urlopen ( url ) 
+					parsed = BeautifulSoup ( data.read() , 'lxml' )
+					print parsed.find( 'title' )
+				except  :
+					print 'error occured in download url' 
 
 
 	def createurl ( self  ) : 
-		try : 
+			#create the url here
 			while True :
-				self.q.put('http://www.aol.com' )
+				try :
+					self.q.put('http://www.aol.com' )
 		
-		except :
-			print 'error occured in create url'
+				except :
+					print 'error occured in create url'
 
 if __name__== '__main__':
 	u = Downloader()
