@@ -3,12 +3,14 @@ import socket
 import Queue
 import thread
 from bs4 import BeautifulSoup
+from random import randrange
 
 class Downloader():
-	socket.setdefaulttimeout ( 10 )
 
 	def __init__( self ):
 			self.q = Queue.Queue( 100 )
+			self.notvalid = [ 10, 127, 169, 172, 192]
+			socket.setdefaulttimeout( 10 ) 
 
 	def downloadurl( self ) :	
 			while True :
@@ -29,6 +31,14 @@ class Downloader():
 					self.q.put('http://www.facebook.com')
 					self.q.put('http://www.yahoo.com')
 					self.q.put('http://www.icicibank.com')
+					self.q.put('http://www.apple.com')
+					self.q.put('http://173.200.40.143')
+					first = randrange( 1, 256 )
+					while first in self.notvalid : 
+						first = randrange( 1, 256 ) 
+					ip = '.'.join([ str( first ), str( randrange( 1, 256 ) ), str( randrange( 1, 256 ) ), str( randrange( 1, 256 ) ) ] )
+					#print ip 
+					self.q.put('http://ip')
 				except :
 					print 'error occured in create url'
 
