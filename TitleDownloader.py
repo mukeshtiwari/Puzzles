@@ -26,7 +26,9 @@ class Downloader():
 			while True :
 				try :
 					self.q.put('http://www.aol.com' )
-		
+					self.q.put('http://www.facebook.com')
+					self.q.put('http://www.yahoo.com')
+					self.q.put('http://www.icicibank.com')
 				except :
 					print 'error occured in create url'
 
