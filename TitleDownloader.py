@@ -49,6 +49,7 @@ class Downloader():
 if __name__== '__main__':
 	u = Downloader()
 	thread.start_new_thread ( u.createurl , () )
-	thread.start_new_thread ( u.downloadurl , () )
+	for i in xrange ( 5 ) :
+		thread.start_new_thread ( u.downloadurl , () )
 	while True : pass
 
