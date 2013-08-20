@@ -23,10 +23,14 @@ class Downloader():
 					#parsed = BeautifulSoup ( data.read() , 'lxml' )
 					#print  ', '.join ( [ url , parsed.find( 'title' ).renderContents() ] )
 					data.close()
+				except urllib2.URLError, e :
+					print e.code
+					#iprint e.read()
+				except socket.error: 
+					print 'Could not open socket'
+
 				except :
-					print 'error occured in download url' 
-
-
+					print 'some thing wrong'
 	def createurl ( self  ) : 
 			#This reading line by line is good but it's slow.
 			#with open('top-1m.csv', 'r') as file:
