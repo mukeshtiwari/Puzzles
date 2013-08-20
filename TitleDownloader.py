@@ -17,7 +17,7 @@ class Downloader():
 				try :
 					url = self.q.get( )
 					data = urllib2.urlopen ( url )
-					regex = re.compile('<title>(.*?)</title>' , re.IGNORECASE)
+					regex = re.compile('<title.*>(.*?)</title>' , re.IGNORECASE)
 					title = regex.search(data.read())
 					print ', '.join ( [ url , title.group(1) ] )
 					#parsed = BeautifulSoup ( data.read() , 'lxml' )
