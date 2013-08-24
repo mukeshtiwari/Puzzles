@@ -1,8 +1,4 @@
-import urllib2
-import socket
-import Queue
-import thread
-import re
+import urllib2, socket, Queue, thread, signal, sys, re
 
 class Downloader():
 
@@ -10,14 +6,15 @@ class Downloader():
 		self.q = Queue.Queue( 100 )
 		socket.setdefaulttimeout( 10 )
 
-	def downloadurl( self ) :	
+	def downloadurl( self ) :
 		while True :
 			try :
 				url = self.q.get( )
 				data = urllib2.urlopen ( url )
 				regex = re.compile('<title.*>(.*?)</title>' , re.IGNORECASE)
 				title = regex.search(data.read())
-				print ', '.join ( [ url , title.group(1) ] )
+				result =  ', '.join ( [ url , title.group(1) ] )
+				print result
 				data.close()
 			except urllib2.URLError, e :
 				print e.code
@@ -26,6 +23,7 @@ class Downloader():
 				print 'Could not open socket'
 			except :
 				print 'some thing wrong'
+				
 
 	def createurl ( self ) :
 
@@ -39,13 +37,16 @@ class Downloader():
 				for i in xrange ( n - 1 ) : self.q.put ( ''.join ( [ 'http://www.', l[i].split(',')[1] ] ) )
 				prefix = l[n-1]
 
-
-
+	def handleexception ( self , signal , frame) :
+		print 'i am here to handle exception'
+		sys.exit(0)
 
 if __name__== '__main__':
 	u = Downloader()
+	signal.signal( signal.SIGINT , u.handleexception)
 	thread.start_new_thread ( u.createurl , () )
 	for i in xrange ( 5 ) :
 		thread.start_new_thread ( u.downloadurl , () )
 	while True : pass
+			
 
