@@ -1,0 +1,206 @@
+ 
+Axis Mutual Fund
+ 
+120523;INF846K01ET8;INF846K01EU6;Axis Triple Advantage Fund - Direct Plan - Dividend Option;13.4467;13.3122;13.4467;22-Jun-2015
+120524;INF846K01EV4;-;Axis Triple Advantage Fund - Direct Plan - Growth Option;15.6128;15.4567;15.6128;22-Jun-2015
+113065;INF846K01776;INF846K01784;Axis Triple Advantage Fund - Dividend Option;12.4075;12.2834;12.4075;22-Jun-2015
+113064;INF846K01768;-;Axis Triple Advantage Fund - Growth Option;15.2126;15.0605;15.2126;22-Jun-2015
+ 
+Baroda Pioneer Mutual Fund
+ 
+125112;INF955L01DB5;-;Baroda Pioneer Balance Fund - Plan A - Bonus Option;43.19;42.76;43.19;22-Jun-2015
+101913;INF955L01682;INF955L01690;BARODA PIONEER BALANCE FUND - Plan A - Dividend Option;25.68;25.42;25.68;22-Jun-2015
+101912;INF955L01708;-;BARODA PIONEER BALANCE FUND - Plan A - Growth Option;43.19;42.76;43.19;22-Jun-2015
+119325;INF955L01922;-;BARODA PIONEER BALANCE FUND - Plan B (Direct) - Dividend Option;26.44;26.18;26.44;22-Jun-2015
+119326;INF955L01948;-;BARODA PIONEER BALANCE FUND - Plan B (Direct) - Growth Option;44.22;43.78;44.22;22-Jun-2015
+ 
+Birla Sun Life Mutual Fund
+ 
+120518;-;INF209K01ZB2;Birla Sun Life  95 Fund - Dividend - Direct Plan;172.38;170.66;172.38;22-Jun-2015
+120517;INF209K01ZC0;-;Birla Sun Life  95 Fund - Growth - Direct Plan;567.15;561.48;567.15;22-Jun-2015
+103154;INF209K01BS7;INF209K01EE1;Birla Sun Life 95 Fund-Plan A (Dividend);151.97;150.45;151.97;22-Jun-2015
+103155;INF209K01BT5;-;Birla Sun Life 95 Fund-Plan B(Growth);555.84;550.28;555.84;22-Jun-2015
+131671;INF084M01DK3;INF084M01DL1;Birla Sun Life Dynamic Asset Allocation Fund - Direct Plan - Dividend Option;17.86;17.68;17.86;22-Jun-2015
+131670;INF084M01DJ5;-;Birla Sun Life Dynamic Asset Allocation Fund - Direct Plan - Growth Option;37.83;37.45;37.83;22-Jun-2015
+131665;INF084M01AC6;INF084M01AD4;Birla Sun Life Dynamic Asset Allocation Fund - Regular Plan - Dividend Option;17.47;17.30;17.47;22-Jun-2015
+131666;INF084M01AB8;-;Birla Sun Life Dynamic Asset Allocation Fund - Regular Plan - Growth Option;37.05;36.68;37.05;22-Jun-2015
+100035;-;-;Birla Sun Life Freedom Fund-Plan A (Dividend);14.55;14.40;14.55;21-Oct-2011
+100036;-;-;Birla Sun Life Freedom Fund-Plan B (Growth);30.91;30.60;30.91;21-Oct-2011
+ 
+BOI AXA Mutual Fund
+ 
+127852;INF761K01BM0;INF761K01BN8;BOI AXA EQUITY DEBT REBALANCER FUND  DIRECT PLAN DIVIDEND;12.1578;12.1578;12.1578;22-Jun-2015
+127851;INF761K01BP3;INF761K01BQ1;BOI AXA EQUITY DEBT REBALANCER FUND  REGULAR PLAN DIVIDEND;11.0156;11.0156;11.0156;22-Jun-2015
+127850;INF761K01BO6;-;BOIAXAEQUITY DEBT REBALANCER FUND DIRECT PLAN  GROWTH;12.4172;12.4172;12.4172;22-Jun-2015
+127849;INF761K01BR9;-;BOIAXAEQUITY DEBT REBALANCER FUND REGULAR PLAN  GROWTH;12.3625;12.3625;12.3625;22-Jun-2015
+ 
+Canara Robeco Mutual Fund
+ 
+118272;INF760K01EZ8;-;Canara Robeco Balance - Direct Plan - Growth;111.9600;111.9600;111.9600;22-Jun-2015
+118271;INF760K01EX3;INF760K01EY1;Canara Robeco Balance - Direct Plan - Quarterly Dividend;80.6200;80.6200;80.6200;22-Jun-2015
+106166;INF760K01050;-;Canara Robeco Balance - Regular Plan - Growth;111.3400;111.3400;111.3400;22-Jun-2015
+106167;INF760K01068;INF760K01076;Canara Robeco Balance - Regular Plan - Quarterly Dividend;80.1300;80.1300;80.1300;22-Jun-2015
+ 
+DSP BlackRock Mutual Fund
+ 
+119020;INF740K01NZ1;INF740K01OA2;DSP BlackRock Balanced Fund - Direct Plan - Dividend;32.756;32.428;32.756;22-Jun-2015
+119019;INF740K01NY4;-;DSP BlackRock Balanced Fund - Direct Plan - Growth;109.481;108.386;109.481;22-Jun-2015
+131086;INF740K010D5;INF740K011D3;DSP BlackRock Balanced Fund - Direct Plan - Quarterly Dividend;11.537;11.422;11.537;22-Jun-2015
+131087;INF740K018C0;INF740K019C8;DSP BlackRock Balanced Fund - Regular Plan - Quarterly Dividend;11.413;11.299;11.413;22-Jun-2015
+100081;INF740K01318;-;DSP BlackRock Balanced Fund- Regular Plan - Growth;107.924;106.845;107.924;22-Jun-2015
+100082;INF740K01326;INF740K01334;DSP BlackRock Balanced Fund- Regular Plan -Dividend;25.415;25.161;25.415;22-Jun-2015
+ 
+Escorts Mutual Fund
+ 
+101069;INF966L01242;INF966L01259;Escorts Balanced Fund-Dividend Option;17.0764;16.9056;17.0764;22-Jun-2015
+120818;-;-;Escorts Balanced Fund-Dividend Option-Direct Plan;17.2311;17.0588;17.2311;22-Jun-2015
+101070;INF966L01267;-;Escorts Balanced Fund-Growth Option;98.7412;97.7538;98.7412;22-Jun-2015
+120819;-;-;Escorts Balanced Fund-Growth Option-Direct Plan;99.1400;98.1486;99.1400;22-Jun-2015
+ 
+Franklin Templeton Mutual Fund
+ 
+118547;INF090I01GA2;INF090I01GB0;Franklin India BALANCED FUND - Direct - Dividend;21.9655;21.7458;21.9655;22-Jun-2015
+118546;INF090I01FZ1;-;Franklin India BALANCED FUND - Direct - Growth;91.9190;90.9998;91.9190;22-Jun-2015
+100549;INF090I01825;INF090I01833;Franklin India Balanced Fund-Dividend Plan;21.5664;21.3507;21.5664;22-Jun-2015
+100550;INF090I01817;-;Franklin India Balanced Fund-Growth Plan;90.4784;89.5736;90.4784;22-Jun-2015
+ 
+HDFC Mutual Fund
+ 
+100121;INF179K01376;INF179K01384;HDFC Balanced Fund - Dividend Option;27.531;27.256;27.531;22-Jun-2015
+100122;INF179K01392;-;HDFC Balanced Fund - Growth Option;107.801;106.723;107.801;22-Jun-2015
+118932;INF179K01UX2;INF179K01UY0;HDFC Balanced Fund -Direct Plan - Dividend Option;29.431;29.137;29.431;22-Jun-2015
+118933;INF179K01UZ7;-;HDFC Balanced Fund -Direct Plan - Growth Option;109.533;108.438;109.533;22-Jun-2015
+100900;-;-;HDFC Children Gift Fund-Investment;83.742;81.230;83.742;22-Jun-2015
+100899;-;-;HDFC Children Gift Fund-Savings;35.5064;34.4412;35.5064;22-Jun-2015
+119066;-;-;HDFC Childrens Gift Fund Investment Plan-Direct Plan;85.069;82.517;85.069;22-Jun-2015
+119067;-;-;HDFC Childrens Gift Fund Savings Plan-Direct Plan;36.2186;35.1320;36.2186;22-Jun-2015
+101978;INF179K01AT2;INF179K01AU0;HDFC Prudence Fund - Dividend Option;31.568;31.252;31.568;22-Jun-2015
+101977;INF179K01AV8;-;HDFC Prudence Fund - Growth Option;370.759;367.051;370.759;22-Jun-2015
+118990;INF179K01YA2;INF179K01YB0;HDFC Prudence Fund -Direct Plan - Dividend Option;34.803;34.455;34.803;22-Jun-2015
+118991;INF179K01YC8;-;HDFC Prudence Fund -Direct Plan - Growth Option;376.253;372.490;376.253;22-Jun-2015
+ 
+ICICI Prudential Mutual Fund
+ 
+120376;INF109K010B4;INF109K011B2;ICICI Prudential Balanced Advantage Fund - Direct Plan -  Dividend;19.06;18.87;19.06;22-Jun-2015
+120377;INF109K012B0;-;ICICI Prudential Balanced Advantage Fund - Direct Plan -  Growth;26.23;25.97;26.23;22-Jun-2015
+122236;INF109K016W7;INF109K015W9;ICICI Prudential Balanced Advantage Fund - Direct Plan - Monthly Dividend;13.95;13.81;13.95;22-Jun-2015
+131451;INF109KA1Y50;INF109KA1Y43;ICICI Prudential Balanced Advantage Fund - Direct Plan - Quarterly Dividend;10.91;10.80;10.91;22-Jun-2015
+104686;INF109K01EG8;INF109K01BG4;ICICI Prudential Balanced Advantage Fund - Regular Plan -  Dividend;16.69;16.52;16.69;22-Jun-2015
+104685;INF109K01BH2;-;ICICI Prudential Balanced Advantage Fund - Regular Plan -  Growth;25.65;25.39;25.65;22-Jun-2015
+122168;INF109K018W3;INF109K017W5;ICICI Prudential Balanced Advantage Fund - Regular Plan - Monthly Dividend;13.63;13.49;13.63;22-Jun-2015
+131450;INF109KA1Y35;INF109KA1Y27;ICICI Prudential Balanced Advantage Fund - Regular Plan - Quarterly Dividend;10.83;10.72;10.83;22-Jun-2015
+120252;INF109K01X81;INF109K01X99;ICICI Prudential Balanced Fund - Direct Plan -  Dividend;25.96;25.70;25.96;22-Jun-2015
+120251;INF109K01Y07;-;ICICI Prudential Balanced Fund - Direct Plan -  Growth;93.43;92.50;93.43;22-Jun-2015
+131453;INF109KA1Y19;INF109KA1Y01;ICICI Prudential Balanced Fund - Direct Plan - Half Yearly Dividend;10.95;10.84;10.95;22-Jun-2015
+100355;INF109K01DX5;INF109K01498;ICICI Prudential Balanced Fund - Regular Plan -  Dividend;22.93;22.70;22.93;22-Jun-2015
+100356;INF109K01480;-;ICICI Prudential Balanced Fund - Regular Plan -  Growth;91.52;90.60;91.52;22-Jun-2015
+131452;INF109KA1X93;INF109KA1X85;ICICI Prudential Balanced Fund - Regular Plan - Half Yearly Dividend;10.98;10.87;10.98;22-Jun-2015
+120579;INF109K01Y49;-;ICICI Prudential Child Care Plan Gift - Direct Plan;102.09;101.07;102.09;22-Jun-2015
+101127;INF109K01605;-;ICICI Prudential Child Care Plan Gift - Regular Plan;100.39;99.39;100.39;22-Jun-2015
+ 
+JM Financial Mutual Fund
+ 
+130904;INF192K01HB8;-;JM Balanced Fund (Direct) - Annual Bonus Option;39.0896;39.0896;39.0896;22-Jun-2015
+131477;INF192K01HJ1;INF192K01HK9;JM Balanced Fund (Direct) - Annual Dividend Option;27.6121;27.6121;27.6121;22-Jun-2015
+133401;INF192K01GP0;-;JM Balanced Fund (Direct) - Bonus Option - Principal Units;39.1892;39.1892;39.1892;22-Jun-2015
+120483;INF192K01BO4;INF192K01BP1;JM Balanced Fund (Direct) - Dividend Option;27.5522;27.5522;27.5522;22-Jun-2015
+120484;INF192K01BQ9;-;JM Balanced Fund (Direct) - Growth Option;39.0897;39.0897;39.0897;22-Jun-2015
+133409;INF192K01HV6;-;JM Balanced Fund (Direct) - Half Yearly Bonus Option - Principal Units;39.1892;39.1892;39.1892;22-Jun-2015
+133402;INF192K01HH5;INF192K01HI3;JM Balanced Fund (Direct) - Half Yearly Dividend Option;27.6366;27.6366;27.6366;22-Jun-2015
+133412;INF192K01HN3;INF192K01HO1;JM Balanced Fund (Direct) - Monthly Dividend Option;27.6366;27.6366;27.6366;22-Jun-2015
+133411;INF192K01HZ7;-;JM Balanced Fund (Direct) - Quarterly Bonus Option - Principal Units;39.1892;39.1892;39.1892;22-Jun-2015
+133406;INF192K01HR;INF192K01HS2;JM Balanced Fund (Direct) - Quarterly Dividend Option;27.6260;27.6260;27.6260;22-Jun-2015
+133407;INF192K01GZ;-;JM Balanced Fund - Annual Bonus Option;38.0323;38.0323;38.0323;22-Jun-2015
+131476;INF192K01HF9;INF192K01HG7;JM Balanced Fund - Annual Dividend Option;27.1174;27.1174;27.1174;22-Jun-2015
+133400;INF192K01GN5;-;JM Balanced Fund - Bonus Option - Principal Units;38.0323;38.0323;38.0323;22-Jun-2015
+133403;INF192K01HT0;-;JM Balanced Fund - Half Yearly Bonus Option - Principal Units;38.0323;38.0323;38.0323;22-Jun-2015
+133408;INF192K01HD4;INF192K01HE2;JM Balanced Fund - Half Yearly Dividend Option;27.1155;27.1155;27.1155;22-Jun-2015
+133404;INF192K01HL;INF192K01HM5;JM Balanced Fund - Monthly Dividend Option;27.1155;27.1155;27.1155;22-Jun-2015
+133410;INF192K01HX2;-;JM Balanced Fund - Quarterly Bonus Option - Principal Units;38.0323;38.0323;38.0323;22-Jun-2015
+133405;INF192K01HP8;INF192K01HQ6;JM Balanced Fund - Quarterly Dividend Option;22.2197;22.2197;22.2197;22-Jun-2015
+100220;INF192K01528;INF192K01536;JM Balanced Fund-Dividend;13.0962;13.0962;13.0962;22-Jun-2015
+100221;INF192K01544;-;JM Balanced Fund-Growth;37.9121;37.9121;37.9121;22-Jun-2015
+ 
+JPMorgan Mutual Fund
+ 
+134154;INF843K01KS4;INF843K01KT2;JPMorgan India Balanced Advantage Fund - Direct Plan - Dividend Option;9.6571;9.5605;9.6571;22-Jun-2015
+134150;INF843K01KQ8;-;JPMorgan India Balanced Advantage Fund - Direct Plan - Growth Option;9.6833;9.5865;9.6833;22-Jun-2015
+134153;INF843K01KV8;-;JPMorgan India Balanced Advantage Fund - Regular Plan - Bonus Option;9.6477;9.5512;9.6477;22-Jun-2015
+134155;INF843K01KW6;INF843K01KX4;JPMorgan India Balanced Advantage Fund - Regular Plan - Dividend Option;9.6477;9.5512;9.6477;22-Jun-2015
+134152;INF843K01KU0;-;JPMorgan India Balanced Advantage Fund - Regular Plan - Growth Option;9.6477;9.5512;9.6477;22-Jun-2015
+ 
+Kotak Mahindra Mutual Fund
+ 
+100286;INF174K01443;INF174K01450;Kotak Balance;15.553;15.397;15.553;22-Jun-2015
+133035;INF174K01F00;-;Kotak Balance - Direct Growth;18.968;18.778;18.968;22-Jun-2015
+119767;INF174K01LL7;-;Kotak Balance - Dividend - Direct;15.93;15.771;15.93;22-Jun-2015
+133036;INF174K01E92;-;Kotak Balance - Growth;18.583;18.397;18.583;22-Jun-2015
+ 
+LIC NOMURA Mutual Fund
+ 
+120260;INF767K01EC2;INF767K01EE8;LIC NOMURA MF Balanced Fund-Direct Plan Dividend Option;14.5964;14.4504;14.5964;22-Jun-2015
+120261;INF767K01ED0;-;LIC NOMURA MF Balanced Fund-Direct Plan Growth Option;86.0577;85.1971;86.0577;22-Jun-2015
+100323;INF767K01030;-;LIC NOMURA MF Balanced Fund-Growth;84.7742;83.9265;84.7742;22-Jun-2015
+100321;INF767K01022;INF767K01014;LICMF Balanced Fund-Dividend;14.3612;14.2176;14.3612;22-Jun-2015
+ 
+PRINCIPAL Mutual Fund
+ 
+119484;INF173K01FE6;-;Principal Balanced Fund- Direct Plan - Growth Option;51.54;51.02;51.54;22-Jun-2015
+101266;INF173K01CI4;INF173K01CJ2;Principal Balanced Fund- Half Yearly Dividend;23.15;22.92;23.15;22-Jun-2015
+119485;INF173K01FB2;INF173K01FC0;Principal Balanced Fund-Direct Plan - Half Yearly Dividend Option;25.67;25.41;25.67;22-Jun-2015
+101265;INF173K01CL8;-;Principal Balanced Fund-Growth;50.51;50.00;50.51;22-Jun-2015
+ 
+Reliance Mutual Fund
+ 
+118794;INF204K01B08;-;Reliance Regular Savings Fund - Balanced Option  - Direct Plan Growth Plan;40.4035;39.9995;40.4035;22-Jun-2015
+122766;INF204K011R2;INF204K012R0;Reliance Regular Savings Fund - Balanced Option - Direct Plan - Quarterly Dividend Plan;14.8207;14.6725;14.8207;22-Jun-2015
+118793;INF204K01B16;INF204K01B24;Reliance Regular Savings Fund - Balanced Option - Direct Plan Dividend Plan;19.6706;19.4739;19.6706;22-Jun-2015
+112937;INF204K01FX9;INF204K01FY7;Reliance Regular Savings Fund - Balanced Option - Dividend Plan;17.0048;16.8348;17.0048;22-Jun-2015
+112936;INF204K01FW1;-;Reliance Regular Savings Fund - Balanced Option - Growth Plan;39.6047;39.2087;39.6047;22-Jun-2015
+122765;INF204K013R8;INF204K014R6;Reliance Regular Savings Fund - Balanced Option - Quarterly Dividend Plan;15.0459;14.8954;15.0459;22-Jun-2015
+ 
+SBI Mutual Fund
+ 
+119604;INF200K01RW4;INF200K01RX2;SBI Magnum Balanced Fund - DIRECT PLAN - Dividend;40.4564;40.0518;40.4564;22-Jun-2015
+101551;INF200K01115;INF200K01123;SBI Magnum Balanced Fund - REGULAR PLAN - Dividend;28.9287;28.6394;28.9287;22-Jun-2015
+119609;INF200K01RY0;-;SBI Magnum Balanced Fund - DIRECT PLAN - Growth;95.8402;94.8818;95.8402;22-Jun-2015
+102885;INF200K01107;-;SBI Magnum Balanced Fund - REGULAR PLAN -Growth;94.3098;93.3667;94.3098;22-Jun-2015
+ 
+Sundaram Mutual Fund
+ 
+100617;INF903J01744;-;Sundaram Balanced Fund - Appreciation Option;64.0709;63.4302;64.0709;22-Jun-2015
+119542;INF903J01MP0;-;Sundaram Balanced Fund - Direct Plan - Growth Option;64.9464;64.2969;64.9464;22-Jun-2015
+119545;INF903J01MN5;INF903J01MO3;Sundaram Balanced Fund - Direct Plan - Dividend Option;14.4553;14.3107;14.4553;22-Jun-2015
+101472;INF903J01728;INF903J01736;Sundaram Balanced Fund - Dividend Option;14.2254;14.0831;14.2254;22-Jun-2015
+111924;INF903J01751;INF903J01769;Sundaram Balanced Fund - Institutional Dividend Option;15.1550;15.0035;15.1550;22-Jun-2015
+ 
+Tata Mutual Fund
+ 
+119053;INF277K01MN2;-;Tata Balanced Fund -Direct Plan- Growth;170.6456;168.9391;170.6456;22-Jun-2015
+119057;INF277K01MO0;INF277K01MP7;Tata Balanced Fund -Direct Plan- Monthly Dividend option;69.3544;68.6609;69.3544;22-Jun-2015
+119058;INF277K01ML6;INF277K01MM4;Tata Balanced Fund -Direct Plan-Dividend Option;78.8010;78.0130;78.8010;22-Jun-2015
+101222;INF277K01DB6;INF277K01295;Tata Balanced Fund Plan A- Dividend Option;77.4390;76.6646;77.4390;22-Jun-2015
+100414;INF277K01303;-;Tata Balanced Fund Plan A- Growth;168.1237;166.4425;168.1237;22-Jun-2015
+113134;INF277K01CS2;INF277K01CW4;Tata Balanced Fund Plan A- Monthly Dividend Option;68.1831;67.5013;68.1831;22-Jun-2015
+101491;INF277K01AJ5;-;Tata Young Citizen [After 7 years] Plan A;20.9399;20.7305;20.9399;22-Jun-2015
+101490;-;-;Tata Young Citizen Fund [>3 years upto 7 years] Plan A;20.9399;20.5211;20.9399;22-Jun-2015
+101489;-;-;Tata Young Citizen Fund [Upto 3 years] Plan A;20.9399;20.3117;20.9399;22-Jun-2015
+119299;-;-;Tata Young Citizens' Fund [> 3 years upto 7 years]-Direct Plan Growth;21.3997;20.9717;21.3997;22-Jun-2015
+119296;-;-;Tata Young Citizens' Fund [Upto 3 years]-Direct Plan Growth;21.3997;20.7577;21.3997;22-Jun-2015
+119312;INF277K01QW4;-;Tata Young Citizens' Fund-(After 7 years)-Direct Plan  Growth;21.3997;21.1857;21.3997;22-Jun-2015
+ 
+Union KBC Mutual Fund
+ 
+119328;INF582M01948;INF582M01930;Union KBC Asset Allocation Fund - Moderate Plan - Direct Plan - Dividend Option;13.1357;13.0700;13.1357;22-Jun-2015
+119327;INF582M01922;-;Union KBC Asset Allocation Fund - Moderate Plan - Direct Plan - Growth Option;13.1357;13.0700;13.1357;22-Jun-2015
+117394;INF582M01484;INF582M01476;Union KBC Asset Allocation Fund - Moderate Plan - Dividend Option;12.9263;12.8617;12.9263;22-Jun-2015
+117393;INF582M01468;-;Union KBC Asset Allocation Fund - Moderate Plan - Growth Option;12.9263;12.8617;12.9263;22-Jun-2015
+ 
+UTI Mutual Fund
+ 
+100684;INF789F01323;-;UTI - Balanced Fund-Growth;126.3307;126.3307;126.33;22-Jun-2015
+120674;INF789F01SK9;-;UTI - Balanced Fund-Growth - Direct;127.2952;127.2952;127.3;22-Jun-2015
+100685;INF789F01307;INF789F01315;UTI - Balanced Fund-Income;29.3497;29.3497;29.35;22-Jun-2015
+120673;INF789F01SI3;INF789F01SJ1;UTI - Balanced Fund-Income - Direct;29.5967;29.5967;29.6;22-Jun-2015
+101662;-;-;UTI - Variable Investment Scheme-Growth Option;17.3822;17.3822;17.3822;30-Mar-2011
+101661;-;-;UTI - Variable Investment Scheme-Income Option;13.0672;13.0672;13.0672;30-Mar-2011
