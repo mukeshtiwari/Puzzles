@@ -51,7 +51,7 @@ parseAllBlock = concat <$> many parseMutualBlock
 main :: IO ()
 main = do 
    input <- readFile "tmp.txt"
-   print input
+   --print input
    case parse  parseAllBlock "" input  of
         Left err -> print err
         Right val -> print val
