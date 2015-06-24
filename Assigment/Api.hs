@@ -19,9 +19,9 @@ float :: Parser Double
 float = T.float lexer
 
 eol :: Parser String
-eol = try (string "\r\n")
-  <|> try (string "\n")
-  <|> try (string "\r")
+eol =  try (string "\r\n")
+   <|> try (string "\n")
+   <|> try (string "\r")
 
 parseFund :: Parsec String () MFund
 parseFund = MFund <$> natural 
@@ -34,25 +34,29 @@ parseFund = MFund <$> natural
                   <*> (char ';' *> many1 (alphaNum <|> char '-'))                  
 
 
-parseOneBlock :: Parsec String () [MFund]
-parseOneBlock = endBy parseFund eol
 
-parseMutualBlock :: Parsec String () [MFund]
-parseMutualBlock = 
-     space >> eol >>
-     manyTill anyChar (char '\n') >>
-     space >> eol >>
-     parseOneBlock
+parseBlockFund :: Parsec String () [MFund]
+parseBlockFund = manyTill anyChar eol *> space *> eol *> endBy parseFund eol
 
+parseMutual :: Parsec String () [MFund]
+parseMutual = concat <$> (manyTill anyChar eol *> space *> eol *>
+              sepBy parseBlockFund (space *> eol)) 
 
-parseAllBlock :: Parsec String () [MFund]
-parseAllBlock = concat <$> many parseMutualBlock
+{- each scheme is seperated by space and end of line-}
+parseSchemeBlock :: Parsec String () [MFund]
+parseSchemeBlock = concat <$> (sepBy parseMutual (space *> eol))
+
+parseFile :: Parsec String () [MFund]
+parseFile = 
+  string "Scheme Code;ISIN Div Payout/ ISIN Growth;ISIN Div Reinvestment;Scheme Name;Net Asset Value;Repurchase Price;Sale Price;Date" *>
+  eol *> space *> eol *> parseSchemeBlock
+
 
 main :: IO ()
 main = do 
-   input <- readFile "tmp.txt"
-   --print input
-   case parse  parseAllBlock "" input  of
+   input <- readFile "data.txt"
+   print input
+   case parse  parseFile  "" input  of
         Left err -> print err
         Right val -> print val
    
