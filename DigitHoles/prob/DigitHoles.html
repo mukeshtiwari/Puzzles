@@ -1,0 +1,120 @@
+<html>
+<head>
+    <title>DigitHoles</title>
+</head>
+<body>
+<h1><a href="/tc?module=ProblemDetail&amp;rd=14236&amp;pm=11127">DigitHoles</a></h1>
+
+<p><em>Single Round Match 483 Round 1 - Division II, Level One</em></p>
+
+<h2>Statement</h2>
+
+<p>Elly's evil teacher assistant Torb has given her the following puzzle: 42 -> 1, 1337 -> 0, 669 -> 3, 1882 -> 4, 688 -> 5, 12345 -> 1, 67890 -> 5, 123 -> 0, 456 -> 2, 789 -> 3. Given this information, 45678 -> ? Thanks to her fast thinking and problem-solving intuition she has found the solution: Google. The answer turned out to be the total number of "holes" in the digits of the number's decimal representation (with no extra leading zeroes). We can see that the digits 1, 2, 3, 5, and 7 contain no holes, 0, 4, 6, and 9 each has one hole, and 8 contains two holes. Therefore the answer to the puzzle is 45678 -> 1 + 0 + 1 + 0 + 2 = 4.</p>
+
+<p>You want to impress Elly, so you decide to write a program that will find the correct answer for certain integers. Given an int <em>number</em>, return the total number of holes in that number.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>DigitHoles</code></li>
+<li><em>Method</em>: <code>numHoles</code></li>
+<li><em>Parameters</em>: <code>int</code></li>
+<li><em>Returns</em>: <code>int</code></li>
+<li><em>Method signature</em>: <code>int numHoles(int number)</code></li>
+</ul>
+
+
+<h2>Notes</h2>
+
+<ul>
+<li>In some fonts, the digit '4' might not contain an enclosed hole, but for this problem you should assume it does.</li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>number</em> will be between 1 and 1000, inclusive.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>42</c></p>
+
+<h4>Output</h4>
+
+<p><c>1</c></p>
+
+<h4>Reason</h4>
+
+<p>4 has one hole, and 2 has no holes.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>669</c></p>
+
+<h4>Output</h4>
+
+<p><c>3</c></p>
+
+<h4>Reason</h4>
+
+<p>Both sixes are counted.</p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>688</c></p>
+
+<h4>Output</h4>
+
+<p><c>5</c></p>
+
+<h4>Reason</h4>
+
+<p>Note that 8 is the only digit that has 2 holes.</p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>123</c></p>
+
+<h4>Output</h4>
+
+<p><c>0</c></p>
+
+<h4>Reason</h4>
+
+<p>A number without holes.</p>
+
+<h3>Example 5</h3>
+
+<h4>Input</h4>
+
+<p><c>456</c></p>
+
+<h4>Output</h4>
+
+<p><c>2</c></p>
+
+<h3>Example 6</h3>
+
+<h4>Input</h4>
+
+<p><c>789</c></p>
+
+<h4>Output</h4>
+
+<p><c>3</c></p>
+
+</body>
+</html>
