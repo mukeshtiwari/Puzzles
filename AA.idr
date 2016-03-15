@@ -1,4 +1,3 @@
-%elim
 data AATree : Type -> Type where
   Nil : AATree a
   Node : (l : Nat) -> (v : a) -> AATree a -> AATree a -> AATree a
@@ -38,6 +37,10 @@ total
 treefromList : (Ord a) =>  List a -> AATree a
 treefromList xs = foldl (flip insert) Nil xs
 
+isEmpty : AATree a -> Bool
+isEmpty [] = False
+isEmpty (Node l v x y) = True
+
 total
 mint : AATree a -> a
 mint Nil = ?rhs_1
@@ -45,7 +48,7 @@ mint (Node l v Nil y) = v
 mint (Node l v x y) = mint x
 
 total
-maxt : AATree a -> a
+maxt : (xs : AATree a) -> a
 maxt Nil = ?rhs_2
 maxt (Node l v x Nil) = v
 maxt (Node l v x y) = maxt y
@@ -55,6 +58,7 @@ level : AATree a -> Nat
 level Nil = 0
 level (Node l v x y) = l
 
+{-
 total
 declevel : AATree a -> AATree a
 declevel Nil = Nil
@@ -67,6 +71,30 @@ declevel t@(Node l v x y) = declevel' t (1 + min (level x) (level y)) where
       declevel' (Node k z w Nil) shouldbe | True | True = Node shouldbe z w Nil
       declevel' (Node k z w (Node j s t u)) shouldbe | True | True =
         Node shouldbe z w (Node shouldbe s t u)
+-}
+
+
+
+total
+declevel : AATree a -> AATree a
+declevel Nil = Nil
+declevel t@(Node l v x y) = declevel' t (1 + min (level x) (level y)) where
+    declevel' : AATree a -> Nat -> AATree a
+    declevel' Nil _ = Nil
+    declevel' (Node j z w s) k with (cmp k j)
+      declevel' (Node (plus k (S n)) z w Nil) k | (CmpLT n) = Node k z w Nil
+      declevel' (Node (plus k (S n)) z w (Node h v ltree rtree)) k | (CmpLT n) with (cmp k h)
+        declevel' (Node (plus k (S n)) z w (Node (plus k (S i)) v ltree rtree)) k
+                  | (CmpLT n) | (CmpLT i) = Node k z w (Node k v ltree rtree)
+        declevel' (Node (plus h (S n)) z w (Node h v ltree rtree)) h | (CmpLT n)
+                  | CmpEQ = Node h z w (Node h v ltree rtree)
+        declevel' (Node (plus plus h (S j) (S n)) z w (Node h v ltree rtree)) (plus h (S j))
+                  | (CmpLT n) | (CmpGT j) = Node (plus h (S j)) z w (Node h v ltree rtree)
+      declevel' (Node j z w s) j | CmpEQ = Node j z w s
+      declevel' (Node j z w s) (plus j (S i)) | (CmpGT i) = Node j z w s
+
+
+
 
 total
 skewRight : AATree a -> AATree a
