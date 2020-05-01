@@ -1,5 +1,5 @@
 {-# LANGUAGE GADTs, KindSignatures, DataKinds #-}
-import Data.Kind
+import Data.Kind (Type)
 
 
 data Dual a  = Dual a a 
@@ -45,7 +45,7 @@ diffDual :: Dual a -> a
 diffDual (Dual _ x') = x'
 
 d :: Num a => (Dual a -> Dual c) -> a -> c
-d f x = diffDual . f $ Dual x 1
+d f = diffDual . f . flip Dual 1
 
 
 
