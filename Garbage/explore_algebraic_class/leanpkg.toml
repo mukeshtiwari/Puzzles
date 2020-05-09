@@ -1,0 +1,8 @@
+[package]
+name = "explore_algebraic_class"
+version = "0.1"
+lean_version = "leanprover-community/lean:3.10.0"
+path = "src"
+
+[dependencies]
+mathlib = {git = "https://github.com/leanprover-community/mathlib", rev = "ac3fb4ebe35f26cb50d6713bc46f06c9f02c349a"}
