@@ -1,0 +1,8 @@
+[package]
+name = "formal-crypto"
+version = "0.1"
+lean_version = "leanprover-community/lean:3.17.1"
+path = "src"
+
+[dependencies]
+mathlib = {git = "https://github.com/leanprover-community/mathlib", rev = "298caa08bb313b3511cd1ba00222839b0b3af598"}
