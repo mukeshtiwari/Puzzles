@@ -4,7 +4,7 @@ import data.nat.basic
 
 def neg_fn (μ : ℕ → ℚ) : Prop :=
   ∀ (c : ℕ), ∃ (n₀ : ℕ),
-    ∀ (n : ℕ), n₀ ≤ n → (μ n) * (n ^ c) < 1
+    ∀ (n : ℕ), n₀ ≤ n → μ n * (n ^ c) < 1
 
 
 theorem sum_neg_fn_is_neg_fn :
@@ -42,3 +42,9 @@ begin
   linarith
 end 
 
+theorem exp_2_neg : neg_fn (λ t : ℕ, 2^(0-t)) := 
+begin 
+  unfold neg_fn, intro c,
+  use c * c, intros n Hc,
+  sorry    
+end
