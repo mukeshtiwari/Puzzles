@@ -6,9 +6,6 @@ def neg_fn (μ : ℕ → ℚ) : Prop :=
   ∀ (c : ℕ), ∃ (n₀ : ℕ),
     ∀ (n : ℕ), n₀ ≤ n → (μ n) * (n ^ c) < 1
 
-def sum_neg_fn (μ₁ μ₂ : ℕ → ℚ) : ℕ → ℚ :=
-  λ (n : ℕ), μ₁ n + μ₂ n
-
 
 theorem sum_neg_fn_is_neg_fn :
   ∀ (μ₁ μ₂ : ℕ → ℚ), neg_fn μ₁ → neg_fn μ₂ → neg_fn (μ₁ + μ₂) :=
@@ -31,6 +28,17 @@ begin
   have Ht₅ : 1/(↑n : ℚ)^2 ≤ 1/(4 : ℚ), 
     {exact div_le_div_of_le_left zero_le_one (by linarith) Ht₄},
   linarith,
-end 
+end
 
+theorem fn_bouded_by_neg_fn_is_neg : 
+  ∀ (μ₁ μ₂ : ℕ → ℚ), (∀ x : ℕ, μ₁ x ≤ μ₂ x) → neg_fn μ₂ → neg_fn μ₁ :=
+begin
+  unfold neg_fn, intros μ₁ μ₂ Hf Hn c,
+  cases Hn c with n₀ Hn₀, 
+  use n₀, intros n Hn₁,  specialize Hn₀ n Hn₁, 
+  specialize Hf n, 
+  have Ht₁ : 0 ≤ (↑n : ℚ)^c, {norm_cast, exact zero_le (n ^ c)},
+  have Ht₂ : μ₁ n * (↑n : ℚ)^c ≤ μ₂ n * (↑n : ℚ)^c := mul_mono_nonneg Ht₁ Hf, 
+  linarith
+end 
 
