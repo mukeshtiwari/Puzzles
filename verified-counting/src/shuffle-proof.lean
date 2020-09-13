@@ -16,18 +16,18 @@ variables
 
 
 def elgamal_enc (m : zmod p) (r : zmod q) := 
-  (g^r.val, g^m.val * pubkey^r.val)
+  (g ^ r.val, g ^ m.val * pubkey ^ r.val)
 
 def elgamal_dec (c : zmod p × zmod p) := 
-  c.2 * (c.1^prikey.val)⁻¹  
+  c.2 * (c.1 ^ prikey.val)⁻¹  
  
 def elgamal_reenc (c : zmod p × zmod p) (r : zmod q) :=  
-  (c.1 * g^r.val, c.2 * pubkey^r.val)
+  (c.1 * g ^ r.val, c.2 * pubkey ^ r.val)
 
 def ciphertext_mult (c d : zmod p × zmod p) :=  
   (c.1 * d.1, c.2 * d.2)
 
-def vector_elegamal_enc {n : ℕ} :  
+def vector_elgamal_enc {n : ℕ} :  
   vector (zmod p) n -> vector (zmod q) n -> vector (zmod p × zmod p) n  
   | ⟨ms, Hm⟩  ⟨rs, Hr⟩ := 
     ⟨list.zip_with (elgamal_enc p q g pubkey) ms rs, 
@@ -37,7 +37,13 @@ def vector_elegamal_enc {n : ℕ} :
       rw <- Hm, apply zip_with_len_l, exact Ht
     end⟩
 
-def vector_elegamal_dec {n : ℕ} :  
+def raise_message_to_generator {n : ℕ} : vector (zmod p) n → vector (zmod p) n
+| ⟨ms, Hm⟩ := ⟨list.map (λ (m : zmod p), g ^ m.val) ms, 
+  begin
+    rw map_with_len_l, exact Hm
+  end⟩ 
+
+def vector_elgamal_dec {n : ℕ} :  
   vector (zmod p × zmod p) n -> vector (zmod p) n  
   | ⟨cs, Hc⟩  := 
     ⟨list.map (elgamal_dec p q prikey) cs, 
@@ -45,7 +51,7 @@ def vector_elegamal_dec {n : ℕ} :
       rw <- Hc, apply map_with_len_l, 
     end⟩
 
-def vector_elegamal_reenc {n : ℕ} :  
+def vector_elgamal_reenc {n : ℕ} :  
   vector (zmod p × zmod p) n -> vector (zmod q) n -> vector (zmod p × zmod p) n  
   | ⟨cs, Hc⟩  ⟨rs, Hr⟩ := 
     ⟨list.zip_with (elgamal_reenc p q g pubkey) cs rs, 
@@ -69,7 +75,7 @@ def vector_ciphertext_mult {n : ℕ} :
 
 /- g  is a generator of the group -/
 include Hp Hq Hdiv H₁ H₂ H₃ H₄ 
-lemma generator_proof : g^q = 1 := 
+lemma generator_proof : g ^ q = 1 := 
 begin
   rw [H₃, ← pow_mul, mul_comm],
   have H : p - 1 = q * k := nat.pred_eq_of_eq_succ Hdiv,
@@ -79,7 +85,7 @@ end
 /- correctness property of encryption and decryption -/
 theorem elgamal_enc_dec_identity : ∀ m r c, 
   c = elgamal_enc p q g pubkey m r →
-  elgamal_dec p q prikey c = g^m.val := 
+  elgamal_dec p q prikey c = g ^ m.val := 
 begin
   unfold elgamal_enc elgamal_dec, simp, 
   intros m r c Hc, rw [Hc, ←H₄, ←pow_mul, ←pow_mul, mul_assoc],
@@ -91,9 +97,9 @@ begin
   exact pow_ne_zero _ Hd, 
 end
 
-
+/- re-encryption correctness -/
 theorem elgamal_reenc_correct : ∀ r r₁ m c₁ c₂, c₁ = elgamal_enc p q g pubkey m r → 
-  c₂ = elgamal_reenc p q g pubkey c₁ r₁ → g^m.val = elgamal_dec p q prikey c₂ :=
+  c₂ = elgamal_reenc p q g pubkey c₁ r₁ → g ^ m.val = elgamal_dec p q prikey c₂ :=
 begin
   intros  r r₁ m c₁ c₂ Hc₁ Hc₂, 
   rw [Hc₂, Hc₁], unfold elgamal_reenc elgamal_enc elgamal_dec, simp, 
@@ -114,8 +120,8 @@ end
 theorem additive_homomorphic_property : forall c d m₁ m₂ r₁ r₂,
  c = elgamal_enc p q g pubkey m₁ r₁ ->
  d = elgamal_enc p q g pubkey m₂ r₂ -> 
- (g^(r₁.val + r₂.val), g^(m₁.val + m₂.val) * 
- pubkey^(r₁.val + r₂.val)) = ciphertext_mult p c d := 
+ (g ^ (r₁.val + r₂.val), g ^ (m₁.val + m₂.val) * 
+ pubkey ^ (r₁.val + r₂.val)) = ciphertext_mult p c d := 
 begin 
   unfold elgamal_enc ciphertext_mult, 
   intros c d m₁ m₂ r₁ r₂ Hc Hd, rw [Hc, Hd], simp,
@@ -125,6 +131,20 @@ begin
     g ^ m₁.val * pubkey ^ r₁.val * (g ^ m₂.val * pubkey ^ r₂.val) :=  
     begin rw [pow_add, pow_add], simp, ring end,
   exact and.intro Ht₁ Ht₂
+end 
+
+theorem vector_elgamal_enc_dec_identity {n : ℕ}: forall (ms : vector (zmod p) n) rs cs,
+  cs = vector_elgamal_enc p q g pubkey ms rs → 
+  vector_elgamal_dec p q prikey cs = raise_message_to_generator p g ms := 
+begin
+  sorry 
+end 
+
+theorem vector_elgamal_reenc_correct {n : nat}: ∀ rs rs₁ (ms : vector (zmod p) n) cs₁ cs₂, 
+  cs₁ = vector_elgamal_enc p q g pubkey ms rs → cs₂ = vector_elgamal_reenc p q g pubkey cs₁ rs₁ → 
+  raise_message_to_generator p g ms  = vector_elgamal_dec p q prikey cs₂ := 
+begin 
+  sorry 
 end 
 
 /- proof the correctness of above functions -/
