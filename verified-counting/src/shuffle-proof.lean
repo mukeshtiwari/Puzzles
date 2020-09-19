@@ -238,6 +238,8 @@ theorem ballot_elgamal_reenc_correct : ∀ (ms : list (zmod p)) rs rs₁ cs₁ c
 
 end encryption
 
+#eval encryption.elgamal_enc 983 491 158 905 10 21
+
 namespace honest_decryption_zkp 
 
 
