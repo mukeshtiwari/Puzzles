@@ -1,7 +1,6 @@
 import data.zmod.basic data.nat.prime 
  number_theory.quadratic_reciprocity
- tactic.find tactic.omega data.vector
- list_lemma
+ tactic.find tactic.omega list_lemma
 
 
 
@@ -9,9 +8,9 @@ namespace encryption
     
 variables 
   (p q k : ℕ) (g h pubkey : zmod p) (prikey : zmod q)
-  [Hk : 2 ≤ k] [Hp : fact (nat.prime p)] [Hq : fact (nat.prime q)]
-  [Hdiv : p = q * k + 1]  [H₁ : h ≠ 0] [H₂ : h^k ≠ 1]
-  [H₃ : g = h^k] [H₄ : g^prikey.val = pubkey]
+  (Hk : 2 ≤ k) (Hp : fact (nat.prime p)) (Hq : fact (nat.prime q))
+  (Hdiv : p = q * k + 1)  (H₁ : h ≠ 0) (H₂ : h^k ≠ 1)
+  (H₃ : g = h^k) (H₄ : g^prikey.val = pubkey)
 
 /- ElGamal Encryption -/
 def elgamal_enc (m : zmod p) (r : zmod q) := 
@@ -30,10 +29,14 @@ def elgamal_reenc (c : zmod p × zmod p) (r : zmod q) :=
 def ciphertext_mult (c d : zmod p × zmod p) :=  
   (c.1 * d.1, c.2 * d.2)
 
-
+ 
 /- Encryption of a ballot (vector of length n) -/
 def elgamal_enc_ballot : list (zmod p) → list (zmod q) → list (zmod p × zmod p) 
-| ms rs := list.zip_with (elgamal_enc p q g pubkey) ms rs 
+| [] [] := []
+| [] (r :: rs) := [] 
+| (m :: ms) [] := []
+| (m :: ms) (r :: rs) := 
+    (elgamal_enc p q g pubkey m r) :: elgamal_enc_ballot ms rs 
 
 /- Encryption of a ballot (vector of length n) 
 def vector_elgamal_enc {n : ℕ} :  
@@ -47,7 +50,8 @@ def vector_elgamal_enc {n : ℕ} :
     end⟩ -/
 
 def elgamal_dec_ballot : list (zmod p × zmod p) → list (zmod p) 
-| cs := list.map (elgamal_dec p q prikey) cs 
+| [] :=  [] 
+| (c :: cs) := elgamal_dec p q prikey c :: elgamal_dec_ballot cs 
 
 /- Decryption of a ballot (vector of length n) 
 def vector_elgamal_dec {n : ℕ} :  
@@ -58,8 +62,12 @@ def vector_elgamal_dec {n : ℕ} :
       rw <- Hc, apply map_with_len_l, 
     end⟩ -/
 
-def elgamal_reenc_ballot : list (zmod p × zmod p) → list (zmod q) → list (zmod p × zmod p) 
-| cs rs := list.zip_with (elgamal_reenc p q g pubkey) cs rs
+def elgamal_reenc_ballot : list (zmod p × zmod p) → list (zmod q) → list (zmod p × zmod p)
+| [] [] := []
+| [] (r :: rs) := [] 
+| (c :: cs) [] := []
+| (c :: cs) (r :: rs) :=  
+  (elgamal_reenc p q g pubkey c r) :: elgamal_reenc_ballot cs rs 
 
 /- Reencryption of ballot (vector of length n)
 def vector_elgamal_reenc {n : ℕ} :  
@@ -72,9 +80,14 @@ def vector_elgamal_reenc {n : ℕ} :
       rw <- Hc, apply zip_with_len_l, exact Ht
     end⟩ -/
 
-def ciphertext_mult_ballot : list (zmod p × zmod p) → list (zmod p × zmod p) → list (zmod p × zmod p) 
-| cs₁ cs₂ := list.zip_with (ciphertext_mult p) cs₁ cs₂
+def ciphertext_mult_ballot : list (zmod p × zmod p) → list (zmod p × zmod p) → list (zmod p × zmod p)
+| [] [] := []
+| [] (c₂ :: cs₂) := [] 
+| (c₁ :: cs₁) [] := []
+| (c₁ :: cs₁) (c₂:: cs₂) := 
+        (ciphertext_mult p c₁ c₂) :: ciphertext_mult_ballot cs₁ cs₂ 
 
+        
 /- Component wise multiplication of two ballot of same length (vector of length n )
 def vector_ciphertext_mult {n : ℕ} :  
   vector (zmod p × zmod p) n -> vector (zmod p × zmod p) n -> vector (zmod p × zmod p) n  
@@ -87,7 +100,9 @@ def vector_ciphertext_mult {n : ℕ} :
     end⟩-/
 
 def raise_message_to_generator : list (zmod p) → list (zmod p)
-| ms := list.map (λ (m : zmod p), g ^ m.val) ms
+| [] := [] 
+| (m :: ms) := (g ^ m.val) :: raise_message_to_generator ms 
+
 /- Decrypting additive ElGamal gives g^m 
 def raise_message_to_generator {n : ℕ} : vector (zmod p) n → vector (zmod p) n
 | ⟨ms, Hm⟩ := ⟨list.map (λ (m : zmod p), g ^ m.val) ms, 
@@ -163,24 +178,58 @@ begin
   exact and.intro Ht₁ Ht₂,
 end 
 
- 
 theorem ballot_elgamal_enc_dec_identity : ∀ (ms : list (zmod p)) (rs : list (zmod q)) cs,
   list.length ms = list.length rs → cs = elgamal_enc_ballot p q g pubkey ms rs → 
   elgamal_dec_ballot p q prikey cs = raise_message_to_generator p g ms 
-  | [] := begin sorry end
-  | (msh :: mst) := begin sorry end 
+  | [] [] := 
+    begin 
+      simp [elgamal_enc_ballot, elgamal_dec_ballot, 
+        raise_message_to_generator], 
+    end 
+  | [] (rsh :: rst) := λ cs Hl, begin contradiction, end
+  | (msh :: mst) [] := λ cs Hl, begin contradiction, end
+  | (msh :: mst) (rsh :: rst) := λ cs Hl Hcs,
+    begin 
+      rw Hcs, cases cs with csh cst, contradiction, 
+      simp [elgamal_enc_ballot] at Hcs, 
+      simp [elgamal_enc_ballot, elgamal_dec_ballot, 
+        raise_message_to_generator], 
+      split, apply elgamal_enc_dec_identity _ _ _ _ _ _ _ Hp Hq Hdiv H₁ H₂ H₃ H₄,
+      refl, cases Hcs, 
+      specialize (ballot_elgamal_enc_dec_identity mst rst cst _ Hcs_right),
+      rw ← Hcs_right, assumption, simp [list.length] at Hl, exact Hl,  
+    end 
 
     
-theorem ballot_elgamal_reenc_correct : ∀ rs rs₁ (ms : list (zmod p)) cs₁ cs₂, 
+theorem ballot_elgamal_reenc_correct : ∀ (ms : list (zmod p)) rs rs₁ cs₁ cs₂, 
   list.length ms = list.length rs → list.length rs = list.length rs₁ →
   cs₁ = elgamal_enc_ballot p q g pubkey ms rs → 
   cs₂ = elgamal_reenc_ballot p q g pubkey cs₁ rs₁ → 
-  elgamal_dec_ballot p q prikey cs₂ = raise_message_to_generator p g ms := 
-begin 
-  
-  sorry 
-
-end 
+  elgamal_dec_ballot p q prikey cs₂ = raise_message_to_generator p g ms 
+  | [] [] [] := begin intros _ _ Hl₁ Hl₂,
+      simp[elgamal_enc_ballot], intro Hc₁, 
+      rw Hc₁, simp[elgamal_reenc_ballot], 
+      intros Hc₂, rw Hc₂, simp[elgamal_dec_ballot, raise_message_to_generator]
+     end
+  | [] [] (r₁ :: rs₁) := begin intros, contradiction end
+  | [] (r :: rs) [] := begin intros, contradiction end
+  | [] (r :: rs) (r₁ :: rs₁) := begin intros, contradiction end
+  | (m :: ms) [] [] := begin intros, contradiction end
+  | (m :: ms) [] (r₁ :: rs₁) := begin intros, contradiction end
+  | (m :: ms) (r :: rs) [] := begin intros, contradiction end 
+  | (m :: ms) (r :: rs) (r₁ :: rs₁) := begin 
+      intros _ _ Ht₁ Ht₂ Ht₃ Ht₄, 
+      cases cs₁ with csh₁ cst₁, 
+      contradiction, cases cs₂ with csh₂ cst₂,
+      contradiction, simp [elgamal_reenc_ballot] at Ht₄,
+      simp [elgamal_enc_ballot] at Ht₃, 
+      simp [elgamal_dec_ballot, raise_message_to_generator],
+      split, cases Ht₄ with Hl Hr, cases Ht₃ with Htl Htr, 
+      apply elgamal_reenc_correct; assumption, 
+      specialize (ballot_elgamal_reenc_correct ms rs rs₁ cst₁ cst₂ _ _  Ht₃.2 Ht₄.2),
+      assumption, simp[list.length] at Ht₁, assumption,  
+      simp[list.length] at Ht₂, assumption,
+  end 
 
 /- proof the correctness of above functions -/
 /- shuffle  -/
@@ -188,3 +237,9 @@ end
 /- run it and submit it to ccs -/
 
 end encryption
+
+namespace honest_decryption_zkp 
+
+
+
+end honest_decryption_zkp
