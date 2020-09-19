@@ -1,5 +1,6 @@
 import
-  tactic.find tactic.omega 
+  tactic.find tactic.omega
+  data.vector tactic.basic  
 
 lemma zip_with_len_l {α β γ : Type*} {l₁ : list α} {l₂ : list β} {f : α → β → γ}
   (h : list.length l₁ = list.length l₂) : 
