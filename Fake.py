@@ -1,5 +1,6 @@
 from Crypto.Util.number import getPrime, getRandomRange, isPrime, inverse
 
+#https://crypto.stackexchange.com/questions/96042/faking-pedersen-commitment/117695#117695
 
 def generate_safe_prime(bits):
   while True:
